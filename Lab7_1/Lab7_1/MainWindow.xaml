@@ -17,7 +17,8 @@
             <Button x:Name="ImE" Content="Image" Height="19" Canvas.Left="124" Canvas.Top="355" Width="75" Click="ImE_Click"/>
             <Button x:Name="ImP" Content="Image" Height="19" Canvas.Left="316" Canvas.Top="355" Width="75" Click="ImP_Click"/>
             <Button x:Name="ImR" Content="Image" Height="19" Canvas.Left="222" Canvas.Top="355" Width="75" Click="ImR_Click"/>
-            <Button x:Name="anim" Content="Animation" Height="20" Canvas.Left="499" Canvas.Top="378" Width="75" Click="Anim_Click"/>
+            <Button x:Name="anim" Content="Animation" Height="20" Canvas.Left="499" Canvas.Top="379" Width="75" Click="Anim_Click"/>
+            <Button x:Name="inter" Content="intersection" Height="19" Canvas.Left="581" Canvas.Top="379" Width="75" Click="Inter_Click"/>
         </Canvas>
 
     </Grid>

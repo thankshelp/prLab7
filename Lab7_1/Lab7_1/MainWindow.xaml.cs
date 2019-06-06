@@ -107,6 +107,8 @@ namespace Lab7_1
             myEllipse.Height = 100;
             myEllipse.Margin = new Thickness(350, 170, 0, 0);
 
+            myEllipse.RenderTransform = new ScaleTransform(2, 0.5);
+
             scene.Children.Add(myEllipse);
         }
 
@@ -122,8 +124,18 @@ namespace Lab7_1
             myRect.Height = 70;
             myRect.Width = 70;
             myRect.Margin = new Thickness(240, 100, 0, 0);
+            myRect.RenderTransform = new RotateTransform(45, 50, 50);
+
+            myRect.MouseEnter += MyRect_MouseEnter;
             
             scene.Children.Add(myRect);
+        }
+
+        private void MyRect_MouseEnter(object sender, MouseEventArgs e)
+        {
+            ImageBrush ib = new ImageBrush();
+            ib.ImageSource = new BitmapImage(new Uri("D://Программирование//2 семестр//Lab7//Lab7_1//Lab7_1//image//BPL52P1SZa8.jpg", UriKind.Absolute));
+            myRect.Fill = ib;
         }
 
         private void Polygon_Click(object sender, RoutedEventArgs e)
@@ -149,7 +161,9 @@ namespace Lab7_1
             myPointCollection.Add(Point5);
 
             myPolygon.Points = myPointCollection;
-
+            
+            myPolygon.RenderTransform = new TranslateTransform(200, 200);
+            
             scene.Children.Add(myPolygon);
         }
 
@@ -248,6 +262,18 @@ namespace Lab7_1
 
             scene.Children.Add(viky);
             Timer.Start();
+        }
+
+        private void Inter_Click(object sender, RoutedEventArgs e)
+        {
+            if (myLine.RenderedGeometry.Bounds.IntersectsWith(myEllipse.RenderedGeometry.Bounds) == true)
+            {
+                MessageBox.Show("Прямоугольник и прямая пересекаются");
+            }
+            else
+            {
+                MessageBox.Show("Прямоугольник и прямая не пересекаются");
+            }
         }
     }
 }
